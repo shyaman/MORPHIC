@@ -1,0 +1,14 @@
+{
+  "name": "MORPHIC",
+  "selection": "full_b_uni2_gated_direction002",
+  "epoch": 4,
+  "encoder": "MahmoodLab/UNI2-h",
+  "encoder_sha256": "6e077eda234bebc595868d918d3458d9dd32a050199b0ff04443b2f46a0a3b1e",
+  "files": {
+    "models/morphic_head.pt": "7c8342c9dbca35f1e0b71fe94ab74b02bcc08b5787bb32e113f8d4dcfacce64c",
+    "data/lr_catalog.csv": "95e2271849d75fd38c9e7706a49171e5a6a3e1130d07ea6813ede1f1f61097f9",
+    "data/cohort.csv": "6db699e8dca827bb2befc97137c93a4dff6e860b07f33ab4d92ef502855c753a"
+  },
+  "source_checkpoint": "outputs/hest_full_direction/lambda020/best.pt",
+  "scores_calibrated": false
+}
