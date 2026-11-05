@@ -61,15 +61,33 @@ class GatedLRHead(nn.Module):
                           self.receptor_branch.cell_projection(receiver.float()),
                           (distance_um.float() / 40)[:, None]), dim=1)
 
-    def score_context(self, context, pair_index, edge_positions=None, logits=False):
+    def prepare_role_parameters(self):
+        """Differentiable tables, created anew for each optimizer step."""
+        tables = []
+        for ids, branch in ((self.ligand_ids, self.ligand_branch),
+                            (self.receptor_ids, self.receptor_branch)):
+            unique, inverse = torch.unique(ids, dim=0, return_inverse=True)
+            gene = self._complex(unique)
+            tables.append((torch.sigmoid(branch.gene_gate(gene))[inverse],
+                           branch.gene_bias(gene)[inverse]))
+        return tables
+
+    def score_context(self, context, pair_index, edge_positions=None, logits=False, role_parameters=None):
         if edge_positions is not None:
             context = context[edge_positions]
-        ligand = self._complex(self.ligand_ids[pair_index])
-        receptor = self._complex(self.receptor_ids[pair_index])
-        left = self.ligand_branch.read_projected(context[:, :self.rank], ligand)
-        right = self.receptor_branch.read_projected(context[:, self.rank:2*self.rank], receptor)
-        value = self.scorer(torch.cat((left, right, left * right, context[:, -1:]), 1)).squeeze(1)
-        return value if logits else torch.sigmoid(value)
+        if role_parameters is None:
+            ligand = self._complex(self.ligand_ids[pair_index])
+            receptor = self._complex(self.receptor_ids[pair_index])
+            left = self.ligand_branch.read_projected(context[:, :self.rank], ligand)
+            right = self.receptor_branch.read_projected(context[:, self.rank:2*self.rank], receptor)
+        else:
+            (lg, lb), (rg, rb) = role_parameters
+            left = self.ligand_branch.output(lg[pair_index] * context[:, :self.rank] + lb[pair_index])
+            right = self.receptor_branch.output(rg[pair_index] * context[:, self.rank:2*self.rank] + rb[pair_index])
+        score = self.scorer(torch.cat((left, right, left * right, context[:, -1:]), 1)).squeeze(1)
+        if logits:
+            return score
+        return torch.sigmoid(score)
 
 
 def load_head(path: Path, pairs, device):
@@ -77,6 +95,9 @@ def load_head(path: Path, pairs, device):
     head = GatedLRHead(pairs)
     if state['config']['encoder'] != 'uni2-h' or state['config']['head_type'] != 'gated':
         raise ValueError('Checkpoint architecture does not match MORPHIC')
+    for key in ('ligand_ids', 'receptor_ids'):
+        if not torch.equal(getattr(head, key), state['head'][key]):
+            raise ValueError('Checkpoint and LR catalog order disagree')
     head.load_state_dict(state['head'], strict=True)
     return head.to(device).eval()
 
@@ -113,14 +134,25 @@ def embed(encoder, pixels, masks):
 
 
 def sample_cases(matrix, rows, measured, rng, negatives=16):
-    """All positive mechanisms and up to 16 uniform measured negatives per edge."""
+    """All positives and the original 16 hard-mixture measured negatives per edge."""
     positions, mechanisms, labels, weights = [], [], [], []
     measured = np.asarray(measured, dtype=np.int64)
-    for position, row in enumerate(rows):
-        values = matrix[int(row), measured].toarray().ravel()
+    dense = matrix[rows][:, measured].toarray()
+    for position, values in enumerate(dense):
         positive = np.flatnonzero(values > .5)
         negative = np.flatnonzero(values <= .5)
-        selected = np.r_[positive, rng.choice(negative, min(negatives, len(negative)), replace=False)]
+        nonzero = np.flatnonzero((values > 0) & (values <= .5))
+        zero = np.flatnonzero(values == 0)
+        if len(nonzero) > 32:
+            nonzero = nonzero[np.argsort(values[nonzero], kind='stable')[-32:]]
+        n_nonzero = min(negatives // 2, len(nonzero))
+        selected_negative = np.r_[rng.choice(nonzero, n_nonzero, replace=False),
+            rng.choice(zero, min(negatives-n_nonzero, len(zero)), replace=False)]
+        if len(selected_negative) < negatives:
+            remaining = np.setdiff1d(negative, selected_negative)
+            selected_negative = np.r_[selected_negative, rng.choice(remaining,
+                min(negatives-len(selected_negative), len(remaining)), replace=False)]
+        selected = np.r_[positive, selected_negative].astype(np.int64)
         positions.extend([position]*len(selected))
         mechanisms.extend(measured[selected])
         labels.extend(values[selected] > .5)

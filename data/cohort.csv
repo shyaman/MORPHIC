@@ -1,79 +1,79 @@
-sample,tissue,split,in_b
-TENX132,Bone,train,True
-TENX111,Bowel,train,True
-TENX114,Bowel,train,True
-TENX139,Bowel,validation,True
-TENX147,Bowel,train,True
-TENX149,Bowel,train,True
-TENX138,Brain,train,True
-NCBI783,Breast,validation,True
-NCBI784,Breast,train,True
-NCBI785,Breast,train,True
-TENX191,Breast,train,True
-TENX192,Breast,train,True
-TENX193,Breast,train,True
-TENX194,Breast,train,True
-TENX195,Breast,train,True
-TENX196,Breast,train,True
-TENX197,Breast,train,True
-TENX198,Breast,train,True
-TENX199,Breast,train,True
-TENX94,Breast,train,True
-TENX95,Breast,train,True
-TENX96,Breast,train,True
-TENX97,Breast,train,True
-TENX98,Breast,train,True
-TENX99,Breast,train,True
-TENX188,Cervix,train,True
-TENX119,Heart,train,True
-TENX105,Kidney,train,True
-TENX106,Kidney,train,True
-TENX120,Liver,train,True
-TENX121,Liver,train,True
-NCBI856,Lung,train,False
-NCBI857,Lung,train,False
-NCBI858,Lung,train,False
-NCBI859,Lung,train,False
-NCBI860,Lung,train,False
-NCBI861,Lung,train,False
-NCBI864,Lung,train,False
-NCBI865,Lung,train,False
-NCBI866,Lung,train,False
-NCBI867,Lung,train,False
-NCBI870,Lung,train,False
-NCBI873,Lung,train,False
-NCBI875,Lung,train,False
-NCBI876,Lung,train,False
-NCBI879,Lung,train,False
-NCBI880,Lung,train,False
-NCBI881,Lung,train,False
-NCBI882,Lung,train,False
-NCBI883,Lung,train,False
-NCBI884,Lung,train,False
-NCBI885,Lung,train,False
-NCBI886,Lung,train,False
-NCBI887,Lung,train,False
-NCBI888,Lung,train,False
-TENX118,Lung,train,False
-TENX141,Lung,train,False
-TENX189,Lung,train,False
-TENX190,Lung,train,False
-TENX124,Lymphoid,train,True
-TENX133,Lymphoid,train,True
-TENX134,Lymphoid,train,True
-TENX143,Lymphoid,validation,True
-TENX142,Ovary,train,False
-TENX160,Ovary,train,False
-TENX187,Ovary,train,False
-TENX116,Pancreas,train,False
-TENX126,Pancreas,train,False
-TENX140,Pancreas,train,False
-TENX157,Prostate,train,False
-TENX115,Skin,train,True
-TENX117,Skin,train,True
-TENX122,Skin,train,True
-TENX123,Skin,train,True
-TENX158,Skin,train,True
-TENX148,Bowel,validation,True
-TENX200,Breast,validation,True
-TENX125,Lymphoid,validation,True
+sample,split,tissue,patient,independence_group,source_url,grouping_note
+NCBI783,validation,Breast,patient 5,https://www.nature.com/articles/s41467-023-43458-x::patient=patient 5,                                            ,Original donor/source grouping
+NCBI784,train,Breast,patient 4,https://www.nature.com/articles/s41467-023-43458-x::patient=patient 4,                                            ,Original donor/source grouping
+NCBI785,train,Breast,patient 4,https://www.nature.com/articles/s41467-023-43458-x::patient=patient 4,                                            ,Original donor/source grouping
+NCBI856,test,Lung,Patient 26,GSE250346::VUILD96,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI857,test,Lung,Patient 25,GSE250346::VUILD96,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI858,test,Lung,Patient 24,GSE250346::VUILD91,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI859,test,Lung,Patient 23,GSE250346::VUILD91,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI860,test,Lung,Patient 22,GSE250346::VUILD78,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI861,test,Lung,Patient 21,GSE250346::VUILD78,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI864,test,Lung,Patient 18,GSE250346::VUILD115,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI865,test,Lung,Patient 17,GSE250346::VUILD110,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI866,test,Lung,Patient 16,GSE250346::VUILD107,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI867,test,Lung,Patient 15,GSE250346::VUILD106,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI870,test,Lung,Patient 12,GSE250346::VUILD105,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI873,test,Lung,Patient 9,GSE250346::VUILD102,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI875,test,Lung,Patient 7,GSE250346::VUHD116,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI876,test,Lung,Patient 7,GSE250346::VUHD116,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI879,test,Lung,Patient 4,GSE250346::VUHD069,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI880,test,Lung,Patient 3,GSE250346::TILD175,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI881,test,Lung,Patient 2,GSE250346::TILD117,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI882,test,Lung,Patient 1,GSE250346::TILD117,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI883,test,Lung,Patient 28,GSE250346::THD0011,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI884,test,Lung,Patient 27,GSE250346::THD0008,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gse250346,Original donor/source grouping
+NCBI885,test,Lung,,GSE315411::TMA,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm9427184,Conservative shared TMA source; core/donor relationships unresolved
+NCBI886,test,Lung,,GSE315411::TMA,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm9427183,Conservative shared TMA source; core/donor relationships unresolved
+NCBI887,test,Lung,,GSE315411::TMA,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm9427182,Conservative shared TMA source; core/donor relationships unresolved
+NCBI888,test,Lung,,GSE315411::TMA,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=gsm9427181,Conservative shared TMA source; core/donor relationships unresolved
+TENX105,train,Kidney,,https://www.10xgenomics.com/datasets/human-kidney-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-kidney-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX106,train,Kidney,,https://www.10xgenomics.com/datasets/human-kidney-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-kidney-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX111,train,Bowel,,https://www.10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,https://www.10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,Original donor/source grouping
+TENX114,train,Bowel,,https://www.10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,https://www.10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,Original donor/source grouping
+TENX115,train,Skin,patient 2,https://www.10xgenomics.com/datasets/human-skin-preview-data-xenium-human-skin-gene-expression-panel-1-standard::patient=patient 2,https://www.10xgenomics.com/datasets/human-skin-preview-data-xenium-human-skin-gene-expression-panel-1-standard,Original donor/source grouping
+TENX116,test,Pancreas,patient 2,https://www.10xgenomics.com/datasets/pancreatic-cancer-with-xenium-human-multi-tissue-and-cancer-panel-1-standard::patient=patient 2,https://www.10xgenomics.com/datasets/pancreatic-cancer-with-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX117,train,Skin,patient 1,https://www.10xgenomics.com/datasets/human-skin-preview-data-xenium-human-skin-gene-expression-panel-add-on-1-standard::patient=patient 1,https://www.10xgenomics.com/datasets/human-skin-preview-data-xenium-human-skin-gene-expression-panel-add-on-1-standard,Original donor/source grouping
+TENX118,test,Lung,patient 2,https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard::patient=patient 2,https://www.10xgenomics.com/datasets/preview-data-ffpe-human-lung-cancer-with-xenium-multimodal-cell-segmentation-1-standard,Original donor/source grouping
+TENX119,train,Heart,,https://www.10xgenomics.com/datasets/human-heart-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-heart-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX120,train,Liver,,https://www.10xgenomics.com/datasets/human-liver-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-liver-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX121,train,Liver,,https://www.10xgenomics.com/datasets/human-liver-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-liver-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX122,train,Skin,,https://www.10xgenomics.com/datasets/human-skin-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-skin-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX123,train,Skin,,https://www.10xgenomics.com/datasets/human-skin-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,https://www.10xgenomics.com/datasets/human-skin-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX124,train,Lymphoid,patient 2,https://www.10xgenomics.com/datasets/human-tonsil-data-xenium-human-multi-tissue-and-cancer-panel-1-standard::patient=patient 2,https://www.10xgenomics.com/datasets/human-tonsil-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX125,validation,Lymphoid,patient 1,https://www.10xgenomics.com/datasets/human-tonsil-data-xenium-human-multi-tissue-and-cancer-panel-1-standard::patient=patient 1,https://www.10xgenomics.com/datasets/human-tonsil-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Original donor/source grouping
+TENX126,test,Pancreas,patient1,https://www.10xgenomics.com/datasets/ffpe-human-pancreas-with-xenium-multimodal-cell-segmentation-1-standard::patient=patient1,https://www.10xgenomics.com/datasets/ffpe-human-pancreas-with-xenium-multimodal-cell-segmentation-1-standard,Original donor/source grouping
+TENX132,train,Bone,,https://www.10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,https://www.10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,Original donor/source grouping
+TENX133,train,Lymphoid,,https://www.10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,https://www.10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,Original donor/source grouping
+TENX134,train,Lymphoid,,https://www.10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,https://www.10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,Original donor/source grouping
+TENX138,train,Brain,,https://www.10xgenomics.com/datasets/ffpe-human-brain-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,https://www.10xgenomics.com/datasets/ffpe-human-brain-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,Original donor/source grouping
+TENX139,validation,Bowel,,https://www.10xgenomics.com/datasets/ffpe-human-colorectal-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,https://www.10xgenomics.com/datasets/ffpe-human-colorectal-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,Original donor/source grouping
+TENX140,test,Pancreas,patient 3,https://www.10xgenomics.com/datasets/ffpe-human-ductal-adenocarcinoma-data-with-human-immuno-oncology-profiling-panel-1-standard::patient=patient 3,https://www.10xgenomics.com/datasets/ffpe-human-ductal-adenocarcinoma-data-with-human-immuno-oncology-profiling-panel-1-standard,Original donor/source grouping
+TENX141,test,Lung,patient 1,https://www.10xgenomics.com/datasets/ffpe-human-lung-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard::patient=patient 1,https://www.10xgenomics.com/datasets/ffpe-human-lung-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,Original donor/source grouping
+TENX142,test,Ovary,,https://www.10xgenomics.com/datasets/ffpe-human-ovarian-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,https://www.10xgenomics.com/datasets/ffpe-human-ovarian-cancer-data-with-human-immuno-oncology-profiling-panel-and-custom-add-on-1-standard,Original donor/source grouping
+TENX143,validation,Lymphoid,,https://www.10xgenomics.com/datasets/preview-data-xenium-prime-gene-expression,https://www.10xgenomics.com/datasets/preview-data-xenium-prime-gene-expression,Original donor/source grouping
+TENX147,train,Bowel,Patient 5,https://www.biorxiv.org/content/10.1101/2024.06.04.597233v1.full::patient=Patient 5,https://www.10xgenomics.com/products/visium-hd-spatial-gene-expression/dataset-human-crc,Original donor/source grouping
+TENX148,validation,Bowel,Patient 2,https://www.biorxiv.org/content/10.1101/2024.06.04.597233v1.full::patient=Patient 2,https://www.10xgenomics.com/products/visium-hd-spatial-gene-expression/dataset-human-crc,Original donor/source grouping
+TENX149,train,Bowel,Patient 1,https://www.biorxiv.org/content/10.1101/2024.06.04.597233v1.full::patient=Patient 1,https://www.10xgenomics.com/products/visium-hd-spatial-gene-expression/dataset-human-crc,Original donor/source grouping
+TENX157,test,Prostate,,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-prostate,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-prostate,Original donor/source grouping
+TENX158,train,Skin,,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-skin,Original donor/source grouping
+TENX160,test,Ovary,,https://www.10xgenomics.com/datasets/xenium-prime-fresh-frozen-human-ovary,https://www.10xgenomics.com/datasets/xenium-prime-fresh-frozen-human-ovary,Original donor/source grouping
+TENX187,test,Ovary,,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-ovarian-cancer,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-ovarian-cancer,Original donor/source grouping
+TENX188,train,Cervix,,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-cervical-cancer,https://www.10xgenomics.com/datasets/xenium-prime-ffpe-human-cervical-cancer,Original donor/source grouping
+TENX189,test,Lung,,https://www.10xgenomics.com/datasets/xenium-human-lung-cancer-post-xenium-technote,https://www.10xgenomics.com/datasets/xenium-human-lung-cancer-post-xenium-technote,Original donor/source grouping
+TENX190,test,Lung,,https://www.10xgenomics.com/datasets/xenium-human-lung-cancer-post-xenium-technote,https://www.10xgenomics.com/datasets/xenium-human-lung-cancer-post-xenium-technote,Original donor/source grouping
+TENX191,train,Breast,Patient 1,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 1,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX192,train,Breast,Patient 1,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 1,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX193,train,Breast,Patient 1,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 1,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX194,train,Breast,Patient 2,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 2,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX195,train,Breast,Patient 2,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 2,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX196,train,Breast,Patient 2,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 2,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX197,train,Breast,Patient 3,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 3,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX198,train,Breast,Patient 3,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 3,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX199,train,Breast,Patient 3,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 3,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX200,validation,Breast,Patient 4,https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1::patient=Patient 4,https://www.10xgenomics.com/datasets/xenium-ffpe-human-breast-biomarkers,Original donor/source grouping
+TENX94,train,Breast,patient 3,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard::patient=patient 3,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard,Original donor/source grouping
+TENX95,train,Breast,patient 2,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard::patient=patient 2,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-pre-designed-panel-1-standard,Original donor/source grouping
+TENX96,train,Breast,patient 3,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard::patient=patient 3,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard,Original donor/source grouping
+TENX97,train,Breast,patient 2,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard::patient=patient 2,https://www.10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard,Original donor/source grouping
+TENX98,train,Breast,patient 1,https://www.10xgenomics.com/datasets/ffpe-human-breast-using-the-entire-sample-area-1-standard::patient=patient 1,https://www.10xgenomics.com/datasets/ffpe-human-breast-using-the-entire-sample-area-1-standard,Original donor/source grouping
+TENX99,train,Breast,patient 1,https://www.10xgenomics.com/datasets/ffpe-human-breast-using-the-entire-sample-area-1-standard::patient=patient 1,https://www.10xgenomics.com/datasets/ffpe-human-breast-using-the-entire-sample-area-1-standard,Original donor/source grouping

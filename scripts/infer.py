@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import hashlib
 import os
 from pathlib import Path
 
@@ -169,7 +170,7 @@ def main():
                                                     torch.from_numpy(masks)).cpu().numpy()
         features.flush()
         del encoder
-        if args.checkpoint == Path('models/morphic_head.pt'):
+        if args.checkpoint.resolve() == Path('models/morphic_head.pt').resolve():
             verify_sha256(args.checkpoint,json.loads(Path('models/manifest.json').read_text())['files']['models/morphic_head.pt'])
         head = load_head(args.checkpoint,catalog,device)
         schema = pa.schema([('sender_id',pa.string()),('receiver_id',pa.string()),
@@ -195,7 +196,8 @@ def main():
         (args.out/'run.json').write_text(json.dumps({'image':str(args.image),'mpp':args.mpp,
             'nuclei':str(args.nuclei) if args.nuclei else 'InstanSeg brightfield_nuclei',
             'annotations':str(args.annotations) if args.annotations else None,
-            'checkpoint':str(args.checkpoint),'cells':len(cells),'edges':len(edges),
+            'checkpoint':str(args.checkpoint),
+            'checkpoint_sha256':hashlib.sha256(args.checkpoint.read_bytes()).hexdigest(),'cells':len(cells),'edges':len(edges),
             'eligible_cells':eligible_cells,'sample_percent':args.sample_percent,
             'sampled_anchors':anchor_count,'seed':args.seed,
             'mechanisms':len(catalog),'scores_calibrated':False},indent=2)+'\n')

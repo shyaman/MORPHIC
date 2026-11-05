@@ -7,7 +7,7 @@ import json
 import os
 from pathlib import Path
 
-import pandas as pd
+from morphic.data import select_cohort
 from huggingface_hub import hf_hub_download, snapshot_download
 
 HEST_REVISION = '7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec'
@@ -27,11 +27,16 @@ def main():
     p.add_argument('--skip-hest', action='store_true')
     p.add_argument('--skip-encoder', action='store_true')
     p.add_argument('--skip-segmentation', action='store_true')
+    p.add_argument('--split', nargs='+', choices=['train','validation','test'], default=['train','validation'])
+    p.add_argument('--samples', nargs='+')
     args = p.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
-    receipt = {'hest_revision': HEST_REVISION, 'files': {}}
+    manifest = args.out/'download_manifest.json'
+    receipt = json.loads(manifest.read_text()) if manifest.exists() else {'hest_revision': HEST_REVISION, 'files': {}}
+    if receipt['hest_revision'] != HEST_REVISION:
+        raise ValueError('Existing download manifest uses a different HEST revision')
     if not args.skip_hest:
-        samples = pd.read_csv('data/cohort.csv').query("split == 'validation' or (split == 'train' and in_b == True)")['sample'].tolist()
+        samples = select_cohort(args.split, args.samples)['sample'].tolist()
         patterns = [f'{folder}/{sample}{suffix}' for sample in samples for folder, suffix in
                     [('wsis','.tif'), ('metadata','.json'),
                      ('transcripts','_transcripts.parquet'),

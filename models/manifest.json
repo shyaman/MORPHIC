@@ -1,14 +1,28 @@
 {
   "name": "MORPHIC",
-  "selection": "full_b_uni2_gated_direction002",
-  "epoch": 4,
+  "selection": "streaming_full_ai_10epoch_17004857",
+  "epoch": 3,
   "encoder": "MahmoodLab/UNI2-h",
   "encoder_sha256": "6e077eda234bebc595868d918d3458d9dd32a050199b0ff04443b2f46a0a3b1e",
   "files": {
-    "models/morphic_head.pt": "7c8342c9dbca35f1e0b71fe94ab74b02bcc08b5787bb32e113f8d4dcfacce64c",
+    "models/morphic_head.pt": "4871703f1fa58bf29cf6e4508cb03a1ec19d73f3d8dc35fac2d70bf236f96ecc",
+    "models/training_config.json": "1c147cb587276f9d81926284a66d52674ed6173269c4ab06b4f1915abe4c5cfc",
     "data/lr_catalog.csv": "95e2271849d75fd38c9e7706a49171e5a6a3e1130d07ea6813ede1f1f61097f9",
-    "data/cohort.csv": "6db699e8dca827bb2befc97137c93a4dff6e860b07f33ab4d92ef502855c753a"
+    "data/cohort.csv": "6b0add3fece10a7186651d43e6e0e504722b215872f6aec0fd2d0570bcd04725"
   },
-  "source_checkpoint": "outputs/hest_full_direction/lambda020/best.pt",
-  "scores_calibrated": false
+  "source_checkpoint": "outputs/hest_b_complete_graph/streaming_full_ai_10epoch_17004857/best.pt",
+  "scores_calibrated": false,
+  "source_revision": "11c37b6960641dd5b843d4eebf6cb5710182e173",
+  "source_revision_note": "Research checkout at export; original run configuration preserved separately",
+  "training_config": "models/training_config.json",
+  "graph": "complete",
+  "research_source_sha256": {
+    "scripts/train_hest_complete_graph_streaming.py": "c9f0b4802455310c849ec90f82bbebb06791295f8f9c4011f3343c983190fe3c",
+    "scripts/prepare_hest_complete_graph_cpu.py": "2b60f3d9492600a646666072e63b1cc4c6707845198d189f01730e3bccde5269",
+    "hne_c2c/lr_conditional_head.py": "7bf60540a0dab83bf536e6f4218ad7cf581299f24681de95fbc05e5904d13d96",
+    "hne_c2c/multi_lr_sampling.py": "80e6a00b6b685104f1d1be340c6b905c1fc5de59828b200325d376de5aa91199",
+    "hne_c2c/direction_loss.py": "b338ff72b0034a10a95913ef382e1c70346c6f0ea719c3cf4b698a7358235a34",
+    "hne_c2c/final_benchmark_sampling.py": "ce4918fc4f3e3e255589a79d44f1b4e45c69ecbe1ab328ec347e7efb0ab6bfac",
+    "scripts/evaluate_final_direct_vs_deepcell.py": "2ccc2a8d3a8a15f6c8bb600e32bfb43fd54120858d9503ac5bfc17230849cdc5"
+  }
 }
